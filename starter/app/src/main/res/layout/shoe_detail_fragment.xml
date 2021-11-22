@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
+        <variable
+            name="shoeListingViewModel"
+            type="com.udacity.shoestore.screens.shoeListing.ShoeListingViewModel" />
+
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gameViewModel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_shoe"
+            android:textSize="30sp"
+            android:layout_marginTop="20sp"/>
+
+        <EditText
+            android:id="@+id/shoe_name"
+            android:inputType="text"
+            android:autofillHints="name_of_shoe"
+            android:hint="@string/shoe_style_name"
+            android:text="@={shoe.name}"
+            android:textAlignment="center"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/shoe_company"
+            android:inputType="text"
+            android:autofillHints="company_of_shoe"
+            android:hint="@string/shoe_company"
+            android:text="@={shoe.company}"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/shoe_size"
+            android:inputType="numberDecimal"
+            android:autofillHints="size_of_shoe"
+            android:hint="@string/shoe_size"
+            android:text="@={``+ shoe.size}"
+            android:textAlignment="center"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/shoe_description"
+            android:inputType="text"
+            android:autofillHints="description_of_shoe"
+            android:hint="@string/shoe_description"
+            android:text="@={shoe.description}"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/shoe_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> shoeListingViewModel.addShoe(shoe)}"
+            android:text="@string/continue_btn"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
