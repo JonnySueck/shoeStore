@@ -17,4 +17,5 @@
     <string name="shoe_size">What size is the shoe?</string>
     <string name="quote_format">\"%s\"</string>
     <string name="shoe_description">How would you describe the shoe?</string>
+    <string name="cancel">Cancel</string>
 </resources>

@@ -72,5 +72,12 @@
             android:onClick="@{() -> shoeListingViewModel.addShoe(shoe)}"
             android:text="@string/continue_btn"/>
 
+        <Button
+            android:id="@+id/shoe_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> shoeListingViewModel.cancel()}"
+            android:text="@string/cancel"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

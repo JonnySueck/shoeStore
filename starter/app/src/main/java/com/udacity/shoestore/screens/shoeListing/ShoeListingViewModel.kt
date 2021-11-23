@@ -27,9 +27,13 @@ public class ShoeListingViewModel : ViewModel() {
         showShoes()
         _shoeAdded.value = false
     }
-//    }
+
     fun addShoe(shoe: Shoe) {
         _currentShoes.value?.add(shoe)
+        _shoeAdded.value = true
+    }
+
+    fun cancel(){
         _shoeAdded.value = true
     }
 
