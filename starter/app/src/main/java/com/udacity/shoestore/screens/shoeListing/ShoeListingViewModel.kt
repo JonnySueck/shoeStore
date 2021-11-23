@@ -10,6 +10,8 @@ import com.udacity.shoestore.models.Shoe as Shoe
 
 public class ShoeListingViewModel : ViewModel() {
 
+    val shoeList = ArrayList<Shoe>()
+
     // the current shoes in the inventory (private live data)
     private val _currentShoes = MutableLiveData<MutableList<Shoe>>()
     // public live data
@@ -29,8 +31,8 @@ public class ShoeListingViewModel : ViewModel() {
     }
 //    }
     fun addShoe(shoe: Shoe) {
-        _currentShoes.value?.add(shoe)
-        _shoeAdded.value = true
+        shoeList.add(shoe)
+        _currentShoes.value = shoeList
     }
 
     fun showShoes() {
