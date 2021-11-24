@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -35,7 +37,11 @@ public class ShoeListingFragment : Fragment() {
 
         /** Setting up LiveData observation relationship **/
         ViewModel.currentShoes.observe(viewLifecycleOwner, Observer { newShoes ->
+//            val textView = TextView(this)
+//            val lineaerLayout: LinearLayout = binding.shoeListLayout
             for(shoe in newShoes) {
+//                textView = shoe
+//                binding.shoeListLayout.addView(textView)
                 // Change this to create a linear layout, then add the shoe into the layout as text views.
                 val itemBinding = ShoeDetailFragmentBinding.inflate(layoutInflater, null, false)
                 itemBinding.shoe = shoe
