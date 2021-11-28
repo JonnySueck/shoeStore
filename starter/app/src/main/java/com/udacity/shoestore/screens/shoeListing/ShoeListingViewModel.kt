@@ -1,10 +1,13 @@
 package com.udacity.shoestore.screens.shoeListing;
 
+import android.util.Log
 import android.widget.Button
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.R
+import timber.log.Timber
+import kotlin.math.log
 import com.udacity.shoestore.models.Shoe as Shoe
 
 

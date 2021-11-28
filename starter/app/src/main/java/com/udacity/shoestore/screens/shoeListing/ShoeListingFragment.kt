@@ -41,8 +41,6 @@ public class ShoeListingFragment : Fragment() {
 //            val textView = TextView(this)
 //            val lineaerLayout: LinearLayout = binding.shoeListLayout
             for(shoe in newShoes) {
-//                textView = shoe
-//                binding.shoeListLayout.addView(textView)
                 // Change this to create a linear layout, then add the shoe into the layout as text views.
                 val itemBinding = ShoeDetailFragmentBinding.inflate(layoutInflater, null, false)
                 itemBinding.shoe = shoe
