@@ -20,34 +20,35 @@ public class ShoeListingViewModel : ViewModel() {
     val shoeAdded: LiveData<Boolean>
         get() = _shoeAdded
 
+    // flag if the list needs re-compiled
     fun listCompiled() {
         _shoeAdded.value = false
     }
+
+    // initialize the list of shoes
     init {
         showShoes()
         _shoeAdded.value = false
     }
 
+    // add a shoe to the mutable variable, then flag the observer variable
     fun addShoe(shoe: Shoe) {
         _currentShoes.value?.add(shoe)
         _shoeAdded.value = true
     }
 
+    // flag the observer to go back
     fun cancel(){
         _shoeAdded.value = true
     }
 
+    // show the shoes in the mutable live data variable
     fun showShoes() {
-        //Select and remove a word from the list
         _currentShoes.value = ArrayList<Shoe>()
     }
+
     override fun onCleared() {
         super.onCleared()
     }
 
-
-        // 1. create an onClickListener when the continue button is pressed
-        // 2. Retrieve the data that was submitted (name, size(type: double), company, description)
-        // 3. access the shoe model and add create a new instance of shoe
-//    }
 }

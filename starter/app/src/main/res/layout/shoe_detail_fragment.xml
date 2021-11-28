@@ -10,13 +10,14 @@
             type="com.udacity.shoestore.screens.shoeListing.ShoeListingViewModel" />
 
     </data>
+    <!--Linear Layout to stack the views vertically    -->
     <androidx.appcompat.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/shoeViewModel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"

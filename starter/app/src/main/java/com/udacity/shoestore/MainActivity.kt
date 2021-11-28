@@ -2,26 +2,20 @@ package com.udacity.shoestore
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.Toast
+import androidx.appcompat.widget.ButtonBarLayout
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.databinding.ActivityMainBinding
-import com.udacity.shoestore.models.Shoe as Shoe
-import com.udacity.shoestore.screens.login.LoginFragmentDirections
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -46,8 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         // reference: https://medium.com/@ermarajhussain/how-to-work-with-navigation-controller-in-android-with-kotlin-part-2-152aa6dc3839
         navController = navHostFragment.navController
-        appBarConfiguration = AppBarConfiguration(navController.graph,
-            drawer_layout)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupWithNavController(toolbar, navController,
             appBarConfiguration)
         NavigationUI.setupActionBarWithNavController(this, navController)
@@ -55,8 +48,11 @@ class MainActivity : AppCompatActivity() {
 
     // Functions to inflate the menu options
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.activity_main_drawer, menu)
-        return true
+        val inflater = menuInflater
+        inflater.inflate(R.menu.activity_main_drawer, menu)
+
+        return super.onCreateOptionsMenu(menu)
+    //  menuInflater.inflate(R.menu.activity_main_drawer, menu)
     }
 
     // navigate to the destination upon selection of a menu item

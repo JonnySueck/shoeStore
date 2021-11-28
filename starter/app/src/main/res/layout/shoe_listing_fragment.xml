@@ -7,7 +7,7 @@
             name="shoeListingViewModel"
             type="com.udacity.shoestore.screens.shoeListing.ShoeListingViewModel" />
     </data>
-
+    <!--Linear Layout to stack the views vertically    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--Linear Layout to stack the views vertically    -->
             <LinearLayout
                 android:id="@+id/shoeListLayout"
                 android:orientation="vertical"
@@ -34,7 +35,7 @@
             android:contentDescription="@string/submit"
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

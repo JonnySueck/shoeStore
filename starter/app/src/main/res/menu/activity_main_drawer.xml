@@ -3,6 +3,7 @@
 
     <item
         android:id="@+id/loginFragment"
+        android:visible="false"
         android:icon="@drawable/logout"
         android:title="login" />
 </menu>
