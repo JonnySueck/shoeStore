@@ -22,19 +22,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:openDrawer="start"
         tools:context=".MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_height="0dp"
-            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
             >
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 />
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -58,7 +57,7 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             android:background="@color/cardview_light_background"
-            app:menu="@menu/activity_main_drawer"/>
+            app:menu="@menu/app_bar"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

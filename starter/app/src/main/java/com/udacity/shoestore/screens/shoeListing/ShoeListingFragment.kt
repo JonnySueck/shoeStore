@@ -38,8 +38,6 @@ public class ShoeListingFragment : Fragment() {
 
         /** Setting up LiveData observation relationship **/
         ViewModel.currentShoes.observe(viewLifecycleOwner, Observer { newShoes ->
-//            val textView = TextView(this)
-//            val lineaerLayout: LinearLayout = binding.shoeListLayout
             for(shoe in newShoes) {
                 // Change this to create a linear layout, then add the shoe into the layout as text views.
                 val itemBinding = ShoeDetailFragmentBinding.inflate(layoutInflater, null, false)

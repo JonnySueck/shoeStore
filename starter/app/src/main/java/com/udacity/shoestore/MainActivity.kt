@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import androidx.appcompat.widget.ButtonBarLayout
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     // Functions to inflate the menu options
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.activity_main_drawer, menu)
+        inflater.inflate(R.menu.`app_bar.xml`, menu)
 
         return super.onCreateOptionsMenu(menu)
     //  menuInflater.inflate(R.menu.activity_main_drawer, menu)
