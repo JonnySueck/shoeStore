@@ -7,20 +7,23 @@
             name="shoeListingViewModel"
             type="com.udacity.shoestore.screens.shoeListing.ShoeListingViewModel" />
     </data>
-    <!-- Constraint Layout for flexible placement of FAB    -->
+    <!--Linear Layout to stack the views vertically    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".screens.shoeListing.ShoeListingFragment">
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <!--    Linear Layout to stack the shoeViews vertically    -->
+
+            <!--Linear Layout to stack the views vertically    -->
             <LinearLayout
                 android:id="@+id/shoeListLayout"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
             </LinearLayout>
         </ScrollView>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -33,7 +36,7 @@
             android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-        <!--   button to toggle the menu item (logout)     -->
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,5 +44,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:onClick="toggleMenuVisibility"
             app:layout_constraintBottom_toBottomOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
