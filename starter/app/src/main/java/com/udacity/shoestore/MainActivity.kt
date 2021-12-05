@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(binding.toolbar)
 
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar // assigning ID of the toolbar to a var
         setSupportActionBar(binding.toolbar) // using toolbar as an ActionBar
