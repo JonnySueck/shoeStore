@@ -37,12 +37,12 @@
                 />
         </com.google.android.material.appbar.AppBarLayout>
 
-                <fragment
+                <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/nav_host_fragment"
                     android:name="androidx.navigation.fragment.NavHostFragment"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="30dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -50,16 +50,16 @@
                     app:defaultNavHost="true"
                     app:navGraph="@navigation/main_navigation"/>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            android:background="@color/cardview_light_background"
-            app:menu="@menu/app_bar"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+    <!--        <com.google.android.material.navigation.NavigationView-->
+    <!--            android:id="@+id/nav_view"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            android:layout_gravity="start"-->
+    <!--            android:fitsSystemWindows="true"-->
+    <!--            android:background="@color/cardview_light_background"-->
+    <!--            app:menu="@menu/app_bar"/>-->

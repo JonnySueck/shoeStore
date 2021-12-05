@@ -17,6 +17,9 @@ import com.udacity.shoestore.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var mainMenu: Menu? = null
+    private var menuShowing = false
+
     // initialize a variable for the nav controller
     lateinit var navController: NavController
     // initialize a variable for the appBarConfiguration
@@ -46,11 +49,17 @@ class MainActivity : AppCompatActivity() {
 
     // Functions to inflate the menu options
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.`app_bar`, menu)
-
+        menuInflater.inflate(R.menu.app_bar, menu)
+        mainMenu = menu
         return super.onCreateOptionsMenu(menu)
-    //  menuInflater.inflate(R.menu.activity_main_drawer, menu)
+
+    }
+
+    // toggle the menu item when the menu toggle button is clicked
+    // resource : https://www.codevscolor.com/android-show-hide-menu-button-dynamically
+    fun toggleMenuVisibility(view: View) {
+        mainMenu?.findItem(R.id.loginFragment)?.isVisible = !menuShowing
+        menuShowing = !menuShowing
     }
 
     // navigate to the destination upon selection of a menu item
@@ -63,5 +72,13 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()
     }
+
+    // hide the menu item when going back to the login screen
+    fun toggleMenuVisibility(item: android.view.MenuItem) {
+        navController.navigate(R.id.loginFragment)
+        mainMenu?.findItem(R.id.loginFragment)?.isVisible = !menuShowing
+        menuShowing = !menuShowing
+    }
+
 
 }

@@ -19,4 +19,5 @@
     <string name="shoe_description">How would you describe the shoe?</string>
     <string name="cancel">Cancel</string>
     <string name="logout">logout</string>
+    <string name="menu_toggle">menu toggle</string>
 </resources>

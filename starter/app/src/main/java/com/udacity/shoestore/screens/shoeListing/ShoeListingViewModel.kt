@@ -1,5 +1,6 @@
 package com.udacity.shoestore.screens.shoeListing;
 
+import android.util.EventLog
 import android.util.Log
 import android.widget.Button
 import androidx.lifecycle.LiveData
