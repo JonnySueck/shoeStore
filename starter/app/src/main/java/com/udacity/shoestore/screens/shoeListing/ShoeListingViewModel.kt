@@ -7,12 +7,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.ShoeListingFragmentBinding
 import timber.log.Timber
 import kotlin.math.log
 import com.udacity.shoestore.models.Shoe as Shoe
 
 
 public class ShoeListingViewModel : ViewModel() {
+
+    private var binding: ShoeListingFragmentBinding? = null
+
 
     // the current shoes in the inventory (private live data)
     private val _currentShoes = MutableLiveData<MutableList<Shoe>>()

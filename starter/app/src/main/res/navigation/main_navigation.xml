@@ -27,10 +27,16 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.shoestore.screens.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="fragment_login">
+
+        <argument
+            android:name="clearBackstack"
+            app:argType="boolean"
+            android:defaultValue="true"/>
         <action
             android:id="@+id/action_loginFragment2_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
+            app:launchSingleTop="true"
             app:popUpTo="@id/main_navigation.xml"
             app:popUpToInclusive="true" />
     </fragment>
@@ -42,7 +48,7 @@
             android:id="@+id/action_shoeListingFragment_to_shoeDetailFragment"
             app:destination="@id/shoeDetailFragment"
             app:popUpTo="@id/main_navigation.xml"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
