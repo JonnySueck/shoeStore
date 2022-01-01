@@ -2,11 +2,13 @@ package com.udacity.shoestore.screens.shoeListing
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeDetailFragmentBinding
@@ -46,6 +48,11 @@ class ShoeListingFragment : Fragment() {
         }
 
             return binding.root
-        }
-
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        requireView().findNavController().navigate(ShoeListingFragmentDirections.actionShoeListingFragmentToLoginFragment())
+        return super.onOptionsItemSelected(item)
+    }
+
+}

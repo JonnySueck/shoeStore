@@ -15,7 +15,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.databinding.ActivityMainBinding
 
-private val EXTRA_LOGOUT = "clearBackstack"
+//private val EXTRA_LOGOUT = "clearBackstack"
 class MainActivity : AppCompatActivity() {
     private var mainMenu: Menu? = null
     private var menuShowing = false
@@ -49,22 +49,22 @@ class MainActivity : AppCompatActivity() {
             appBarConfiguration
         )
         NavigationUI.setupActionBarWithNavController(this, navController)
-        if (intent.extras?.getBoolean(EXTRA_LOGOUT) == true) {
-            clearBackstack()
-        } else {
-             binding
-        }
+//        if (intent.extras?.getBoolean(EXTRA_LOGOUT) == true) {
+//            clearBackstack()
+//        } else {
+//             binding
+//        }
     }
 
-    private fun clearBackstack() {
-//        intent = Intent(this, MainActivity::class.java).apply {
-//            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-//        }
-        val intent = Intent(this, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(intent)
-        finish()
-    }
+//    private fun clearBackstack() {
+////        intent = Intent(this, MainActivity::class.java).apply {
+////            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+////        }
+//        val intent = Intent(this, MainActivity::class.java)
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+//        startActivity(intent)
+//        finish()
+//    }
 
 
         // Functions to inflate the menu options
@@ -81,22 +81,8 @@ class MainActivity : AppCompatActivity() {
             menuShowing = !menuShowing
         }
 
-        // navigate to the destination upon selection of a menu item
-        // resource for below fn: https://stackoverflow.com/questions/60682102/how-to-navigate-to-a-fragment-on-menu-item-click-using-android-jetpack-navigatio
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
-        }
-
         override fun onSupportNavigateUp(): Boolean {
             val navController = findNavController(R.id.nav_host_fragment)
             return navController.navigateUp()
         }
-
-        // hide the menu item when going back to the login screen
-        fun toggleMenuVisibility(item: MenuItem) {
-            navController.navigate(R.id.loginFragment)
-            mainMenu?.findItem(R.id.loginFragment)?.isVisible = !menuShowing
-            menuShowing = !menuShowing
-        }
-
     }
