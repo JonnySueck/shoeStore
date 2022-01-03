@@ -1,6 +1,5 @@
 package com.udacity.shoestore
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -12,10 +11,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.databinding.ActivityMainBinding
+import com.udacity.shoestore.screens.shoeListing.ShoeListingFragmentDirections
 
-//private val EXTRA_LOGOUT = "clearBackstack"
 class MainActivity : AppCompatActivity() {
     private var mainMenu: Menu? = null
     private var menuShowing = false
@@ -49,22 +47,7 @@ class MainActivity : AppCompatActivity() {
             appBarConfiguration
         )
         NavigationUI.setupActionBarWithNavController(this, navController)
-//        if (intent.extras?.getBoolean(EXTRA_LOGOUT) == true) {
-//            clearBackstack()
-//        } else {
-//             binding
-//        }
     }
-
-//    private fun clearBackstack() {
-////        intent = Intent(this, MainActivity::class.java).apply {
-////            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-////        }
-//        val intent = Intent(this, MainActivity::class.java)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-//        startActivity(intent)
-//        finish()
-//    }
 
 
         // Functions to inflate the menu options
@@ -84,5 +67,11 @@ class MainActivity : AppCompatActivity() {
         override fun onSupportNavigateUp(): Boolean {
             val navController = findNavController(R.id.nav_host_fragment)
             return navController.navigateUp()
+        }
+        fun toggleMenuVisibility(item: MenuItem) {
+            val navController = findNavController(R.id.nav_host_fragment)
+            navController.navigate(ShoeListingFragmentDirections.actionShoeListingFragmentToLoginFragment())
+            mainMenu?.findItem(R.id.loginFragment)?.isVisible = !menuShowing
+            menuShowing = !menuShowing
         }
     }
